@@ -4,6 +4,7 @@ const serviceAccount = require('../helpers/serviceAccount.json');
 const Jimp = require('jimp');
 const fs = require("fs");
 const UUID = require("uuidv4");
+const { parse } = require("path");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -92,7 +93,7 @@ exports.uploadGaleria = async (req, res, next) => {
     if (bytes == "key_kLk5kE7ypVw6jkU1yWrwxg") {
         let file = req.files;
         var image, url;
-        image = {width: 1080, height: 1080, location:'producto'};
+        image = {width: parseInt(req.body.ancho), height: parseInt(req.body.alto), location:'producto'};
         var name = `${req.body.name}-${Math.random().toString(36).substr(2)}-${image.width}-${image.height}`
         if (file) {
             console.log('entro if');
