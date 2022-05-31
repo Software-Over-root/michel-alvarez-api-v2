@@ -6,17 +6,19 @@ const firebaseRouter = require("../controllers/firebase");
 
 module.exports = function(){
 
-    router.post('/auth/michel-alvarez/v1/conekta', conekta.pago);
+    router.post('/auth/michel-alvarez/v2/conekta', conekta.pago);
 
-    router.post('/auth/michel-alvarez/v1/firebase-upload', firebaseRouter.upload);
+    router.post('/auth/michel-alvarez/v2/firebase-upload', firebaseRouter.upload);
 
-    router.post('/auth/michel-alvarez/v1/firebase-upload-galeria', firebaseRouter.uploadGaleria);
+    router.post('/auth/michel-alvarez/v2/firebase-upload-visita', firebaseRouter.uploadVisita);
+
+    router.post('/auth/michel-alvarez/v2/firebase-upload-galeria', firebaseRouter.uploadGaleria);
 
     router.get('/', firebaseRouter.holaMundo);
 
-    router.post('/auth/michel-alvarez/v1/ventas', conekta.ordenes);
+    router.post('/auth/michel-alvarez/v2/ventas', conekta.ordenes);
 
-    router.post('/auth/michel-alvarez/v1/venta-id', conekta.orden);
+    router.post('/auth/michel-alvarez/v2/venta-id', conekta.orden);
 
     return router;
 }

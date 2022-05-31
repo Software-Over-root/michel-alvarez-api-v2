@@ -21,7 +21,8 @@ exports.pago = (req, res, next) => {
         });
       }
       
-      conekta.api_key = "key_MkHjpbzcHxfjuFafB5QabA";//llave privada
+      // conekta.api_key = "key_s4bLZgHsYxEskxodWrcEhw";//llave privada produccion
+      conekta.api_key = "key_MkHjpbzcHxfjuFafB5QabA";//llave privada prueba
       conekta.locale = 'es';
 
       const orden = {
@@ -117,8 +118,9 @@ exports.ordenes = (req, res, next) => {
         res.send({"success": true, "type": "Consulta exitosas", "res": response, total, total_cargos});
     },
     (error) => {
-        var status = error.response;
-        res.send({"success": false, "type": "Error en obtener datos de conekta", "res": status});
+      console.log(error);
+      var status = error.response;
+      res.send({"success": false, "type": "Error en obtener datos de conekta", "res": status});
     });
   } else {
     res.send({"success": false, "type": "Error en autentificacion"});
