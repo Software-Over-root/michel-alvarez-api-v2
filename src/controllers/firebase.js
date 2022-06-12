@@ -12,7 +12,7 @@ admin.initializeApp({
 });
 
 exports.holaMundo = (req, res, next) => {
-    res.send("<h1>Hola mundo por michel alvarez</h1>");
+    res.send("<h1>Hola mundo por michel alvarez v2</h1>");
 }
 
 
